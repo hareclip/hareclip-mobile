@@ -24,9 +24,6 @@ class HomeHeader extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Icon(
-                  Icons.person,
-                ),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -50,8 +47,9 @@ class HomeHeader extends StatelessWidget {
                     ),
                   ),
                 ),
-                Icon(
-                  Icons.person,
+                IconButton(
+                  icon: Icon(Icons.person),
+                  onPressed: null, // TODO: add profile
                 ),
               ],
             ),

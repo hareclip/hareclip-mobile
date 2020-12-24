@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hareclip/screens/article/article.dart';
@@ -7,10 +8,20 @@ Future main() async {
   await DotEnv().load('.env');
   runApp(
     MaterialApp(
-      routes: {'/article': (context) => ArticleScreen()},
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case '/article':
+            return CupertinoPageRoute(
+                builder: (context) => ArticleScreen(), settings: settings);
+          case '/':
+            return CupertinoPageRoute(
+                builder: (context) => HomeScreen(), settings: settings);
+        }
+      },
       title: 'Hareclip',
       theme: ThemeData(
-        backgroundColor: Colors.black26,
+        primaryColor: Color(0xFFC12A2A),
+        backgroundColor: Colors.grey[200],
         primarySwatch: Colors.red,
         textTheme: TextTheme(
           bodyText2:

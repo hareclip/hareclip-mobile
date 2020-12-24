@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hareclip/models/article.dart';
+import 'package:hareclip/screens/article/article.dart';
 
 // ArticleCard displays article preview card
 class ArticleCard extends StatelessWidget {
