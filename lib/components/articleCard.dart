@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:hareclip/models/article.dart';
 
+// ArticleCard displays article preview card
 class ArticleCard extends StatelessWidget {
   final Article article;
 
   ArticleCard({Key key, @required this.article}) : super(key: key);
 
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, '/article', arguments: article);
-      },
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 10,
-          top: 0,
-          right: 10,
-          bottom: 0,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 10,
+        top: 5,
+        right: 10,
+        bottom: 5,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, '/article', arguments: article);
+            },
+            child: Padding(
               padding: const EdgeInsets.only(
                 left: 0,
                 top: 10,
@@ -29,7 +30,7 @@ class ArticleCard extends StatelessWidget {
                 bottom: 10,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Text(article.categoryLabel),
                   Text(
@@ -50,11 +51,11 @@ class ArticleCard extends StatelessWidget {
                 ],
               ),
             ),
-            Divider(
-              color: Colors.black,
-            ),
-          ],
-        ),
+          ),
+          Divider(
+            color: Colors.black,
+          ),
+        ],
       ),
     );
   }
