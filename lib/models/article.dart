@@ -40,6 +40,8 @@ class Article {
       title: json['title'],
       headerImageFileName: json['headerImageFileName'],
       authorFullName: json['authorFullName'],
+      dateVisible: DateTime.parse(json['dateVisible']),
+      categoryLabel: json['categoryLabel'],
     );
   }
 }

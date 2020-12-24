@@ -9,6 +9,16 @@ Future main() async {
     MaterialApp(
       routes: {'/article': (context) => ArticleScreen()},
       title: 'Hareclip',
+      theme: ThemeData(
+        backgroundColor: Colors.black26,
+        primarySwatch: Colors.red,
+        textTheme: TextTheme(
+          bodyText1: TextStyle(fontSize: 18.0, color: Colors.black),
+          bodyText2:
+              TextStyle(fontSize: 18.0, color: Colors.grey[700], height: 1.5),
+          headline4: TextStyle(color: Colors.black),
+        ),
+      ),
       home: HomeScreen(),
     ),
   );
