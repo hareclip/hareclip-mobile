@@ -7,10 +7,10 @@ import 'package:image/image.dart' as im;
 import 'package:hareclip/models/article.dart';
 
 // Fetches list of article metadata
-Future<List<Article>> fetchArticles() async {
+Future<List<Article>> fetchArticles(int amount, int offset) async {
   var apiURL = DotEnv().env['API_URL'];
-  http.Response response =
-      await http.get(Uri.encodeFull("$apiURL/articles?amount=6"));
+  http.Response response = await http
+      .get(Uri.encodeFull("$apiURL/articles?amount=$amount&offset=$offset"));
 
   Map<String, dynamic> data = jsonDecode(response.body);
   var list = data['data']['articles'] as List;
