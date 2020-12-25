@@ -30,8 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
   bool _hasMore = true;
 
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   // Reload articles on refresh

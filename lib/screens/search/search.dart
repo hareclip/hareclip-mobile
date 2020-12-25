@@ -19,8 +19,9 @@ class _SearchScreenState extends State<SearchScreen> {
   String _searchTerm = "";
 
   @override
-  void initState() {
-    super.initState();
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   // Reload articles on refresh

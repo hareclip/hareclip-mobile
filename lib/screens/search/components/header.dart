@@ -60,10 +60,12 @@ class _SearchHeaderState extends State<SearchHeader> {
                     child: TextField(
                       controller: _fieldText,
                       decoration: new InputDecoration(
-                        suffixIcon: IconButton(
-                          icon: Icon(Icons.clear),
-                          onPressed: _clearText,
-                        ),
+                        suffixIcon: _fieldText.text.length > 0
+                            ? IconButton(
+                                icon: Icon(Icons.clear),
+                                onPressed: _clearText,
+                              )
+                            : null,
                         contentPadding: const EdgeInsets.only(
                           left: 10,
                           top: 0,
