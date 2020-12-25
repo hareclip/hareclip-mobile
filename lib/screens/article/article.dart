@@ -5,6 +5,7 @@ import 'package:hareclip/models/article.dart';
 import 'package:hareclip/screens/article/components/content.dart';
 import 'package:hareclip/screens/article/components/header.dart';
 import 'package:hareclip/screens/article/components/title.dart';
+import 'package:hareclip/services/api.dart';
 
 // ArticleScreen displays single article
 class ArticleScreen extends StatelessWidget {
@@ -31,6 +32,19 @@ class ArticleScreen extends StatelessWidget {
                       children: <Widget>[
                         ArticleTitle(
                           article: article,
+                        ),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10),
+                            child: CachedNetworkImage(
+                              imageUrl: getHeaderImageURL(
+                                  article.headerImageFileName),
+                              placeholder: (context, url) =>
+                                  CircularProgressIndicator(),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                            ),
+                          ),
                         ),
                         Divider(
                           color: Colors.black,

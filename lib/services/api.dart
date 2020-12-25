@@ -27,11 +27,10 @@ Future<String> fetchArticleContent(String path) async {
   return text;
 }
 
-// Fetches article content
-Future<void> fetchHeaderImage(String path) async {
+// Constructs image header url
+String getHeaderImageURL(String path) {
   var s3URL = DotEnv().env['S3_URL'];
-  http.Response response = await http.get(Uri.encodeFull("$s3URL/res/$path"));
-
-  im.Image image = im.decodeImage(response.bodyBytes);
-  //new Io.File('assets/test.jpg').writeAsBytes(response.bodyBytes);
+  var resizerURL = DotEnv().env['RESIZER_URL'];
+  var source = "$s3URL/res/$path";
+  return "$resizerURL/resize?url=$source&width=400";
 }
