@@ -4,6 +4,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hareclip/screens/article/article.dart';
 import 'package:hareclip/screens/home/home.dart';
 import 'package:hareclip/screens/search/search.dart';
+import 'package:hareclip/screens/settings/settings.dart';
 
 Future main() async {
   await DotEnv().load('.env');
@@ -39,7 +40,7 @@ Future main() async {
             children: [
               HomeScreen(),
               SearchScreen(),
-              HomeScreen(),
+              SettingsScreen(),
             ],
           ),
           bottomNavigationBar: TabBar(

@@ -15,7 +15,7 @@ class ArticleScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            ArticleHeader(),
+            ArticleHeader(article: article),
             Expanded(
               child: ListView(
                 physics: BouncingScrollPhysics(),
