@@ -1,8 +1,14 @@
-# hareclip
+# Hareclip
 
-A new Flutter project.
+Mobile reader for the Hare satire newspaper
 
 ## Getting Started
+
+### Prerequisites
+- Flutter
+- Running [Imaginary](https://github.com/h2non/imaginary) deployment
+
+Create `.env` from `sample.env` and insert proper credentials.
 
 This project is a starting point for a Flutter application.
 
