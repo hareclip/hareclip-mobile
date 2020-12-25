@@ -112,6 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: RefreshIndicator(
                 onRefresh: _reloadArticles,
                 child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
                   controller: _scrollController,
                   itemCount: _hasMore
                       ? displayArticles.length + 1

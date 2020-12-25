@@ -18,7 +18,7 @@ class ArticleScreen extends StatelessWidget {
             ArticleHeader(),
             Expanded(
               child: ListView(
-                shrinkWrap: true,
+                physics: BouncingScrollPhysics(),
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(

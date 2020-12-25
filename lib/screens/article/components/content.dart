@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:hareclip/models/article.dart';
 import 'package:hareclip/services/api.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ArticleContent displays content of article
 class ArticleContent extends StatelessWidget {
@@ -14,7 +15,12 @@ class ArticleContent extends StatelessWidget {
       future: fetchArticleContent(article.contentsFileName),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return MarkdownBody(data: snapshot.data);
+          return MarkdownBody(
+            data: snapshot.data,
+            onTapLink: (text, href, title) {
+              launch(href);
+            },
+          );
         } else if (snapshot.hasError) {
           return Center(
             child: Icon(Icons.error),
