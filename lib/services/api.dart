@@ -18,6 +18,18 @@ Future<List<Article>> fetchArticles(int amount, int offset) async {
   return articles;
 }
 
+// Fetches list of article metadata from search term
+Future<List<Article>> fetchSearchArticles(String searchTerm, int offset) async {
+  var apiURL = DotEnv().env['API_URL'];
+  http.Response response = await http.get(Uri.encodeFull(
+      "$apiURL/articles/search?searchTerm=$searchTerm&offset=$offset"));
+
+  Map<String, dynamic> data = jsonDecode(response.body);
+  var list = data['data']['articles'] as List;
+  List<Article> articles = list.map((e) => Article.fromJson(e)).toList();
+  return articles;
+}
+
 // Fetches article content
 Future<String> fetchArticleContent(String path) async {
   var s3URL = DotEnv().env['S3_URL'];

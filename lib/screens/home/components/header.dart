@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// HomeHeader is home screen header with search bar and profile
+// HomeHeader is home screen header
 class HomeHeader extends StatelessWidget {
   final List<String> categories;
   final int selectedCategory;
@@ -24,29 +24,7 @@ class HomeHeader extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: TextField(
-                      decoration: new InputDecoration(
-                          contentPadding: const EdgeInsets.only(
-                            left: 10,
-                            top: 0,
-                            right: 10,
-                            bottom: 0,
-                          ),
-                          border: new OutlineInputBorder(
-                            borderRadius: const BorderRadius.all(
-                              const Radius.circular(10.0),
-                            ),
-                          ),
-                          filled: true,
-                          hintStyle: new TextStyle(color: Colors.grey[800]),
-                          hintText: "Search",
-                          fillColor: Colors.white),
-                    ),
-                  ),
-                ),
+                Text("Hareclip"),
                 IconButton(
                   icon: Icon(Icons.person),
                   onPressed: null, // TODO: add profile
@@ -55,6 +33,7 @@ class HomeHeader extends StatelessWidget {
             ),
           ),
           SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             scrollDirection: Axis.horizontal,
             child: ButtonBar(
               mainAxisSize: MainAxisSize.min,
