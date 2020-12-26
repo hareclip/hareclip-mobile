@@ -1,4 +1,4 @@
-package com.example.hareclip
+package com.hareclip.hareclip_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

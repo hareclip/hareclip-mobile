@@ -32,6 +32,12 @@ Future main() async {
               TextStyle(fontSize: 18.0, color: Colors.grey[700], height: 1.5),
           headline4: TextStyle(color: Colors.black),
         ),
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.red,
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Colors.yellow,
+        ),
       ),
       home: DefaultTabController(
         length: 3,
@@ -45,24 +51,9 @@ Future main() async {
           ),
           bottomNavigationBar: TabBar(
             tabs: [
-              Tab(
-                icon: Icon(
-                  Icons.article,
-                  color: Colors.red,
-                ),
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.red,
-                ),
-              ),
-              Tab(
-                icon: Icon(
-                  Icons.settings,
-                  color: Colors.red,
-                ),
-              ),
+              Tab(icon: Icon(Icons.article)),
+              Tab(icon: Icon(Icons.search)),
+              Tab(icon: Icon(Icons.settings)),
             ],
           ),
         ),

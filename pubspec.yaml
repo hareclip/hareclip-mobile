@@ -39,6 +39,20 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.8.1
+  flutter_rename_app: ^1.0.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+flutter_rename_app:
+  application_name: Hareclip
+  dart_package_name: hareclip
+  application_id: com.hareclip.hareclip_mobile
+  bundle_id: com.hareclip.hareclip_mobile
+  android_package_name: com.hareclip.hareclip_mobile
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
