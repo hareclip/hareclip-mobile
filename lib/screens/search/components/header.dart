@@ -46,7 +46,6 @@ class _SearchHeaderState extends State<SearchHeader> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
-      color: Theme.of(context).backgroundColor,
       child: Column(
         children: [
           Padding(
