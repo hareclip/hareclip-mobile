@@ -30,6 +30,7 @@ Future main() async {
       },
       title: 'Hareclip',
       theme: ThemeData(
+        brightness: Brightness.light,
         primaryColor: Color(0xFFC12A2A),
         backgroundColor: Colors.grey[200],
         primarySwatch: Colors.red,
@@ -43,10 +44,24 @@ Future main() async {
         tabBarTheme: TabBarTheme(
           labelColor: Colors.red,
         ),
-        bottomNavigationBarTheme: BottomNavigationBarThemeData(
-          backgroundColor: Colors.yellow,
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Color(0xFFC12A2A),
+        backgroundColor: Colors.grey[900],
+        primarySwatch: Colors.red,
+        textTheme: TextTheme(
+          bodyText1:
+              TextStyle(fontSize: 18.0, color: Color(0xFFC12A2A), height: 1.5),
+          bodyText2:
+              TextStyle(fontSize: 18.0, color: Colors.grey[500], height: 1.5),
+          headline4: TextStyle(color: Colors.white),
+        ),
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.red,
         ),
       ),
+      themeMode: ThemeMode.dark,
       home: DefaultTabController(
         length: 3,
         child: Scaffold(
