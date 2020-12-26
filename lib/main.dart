@@ -3,18 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hareclip/screens/article/article.dart';
 import 'package:hareclip/screens/home/home.dart';
+import 'package:hareclip/screens/saved/saved.dart';
 import 'package:hareclip/screens/search/search.dart';
 import 'package:hareclip/screens/settings/settings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future main() async {
   await DotEnv().load('.env');
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   runApp(
     MaterialApp(
       onGenerateRoute: (RouteSettings settings) {
         switch (settings.name) {
           case '/article':
             return CupertinoPageRoute(
-                builder: (context) => ArticleScreen(), settings: settings);
+                builder: (context) => ArticleScreen(prefs: prefs),
+                settings: settings);
+          case '/saved':
+            return CupertinoPageRoute(
+                builder: (context) => SavedScreen(prefs: prefs),
+                settings: settings);
           case '/':
             return CupertinoPageRoute(
                 builder: (context) => HomeScreen(), settings: settings);

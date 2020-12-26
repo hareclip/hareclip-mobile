@@ -135,7 +135,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       );
                     } else {
                       // Otherwise, render article card
-                      return ArticleCard(article: displayArticles[index]);
+                      return ArticleCard(
+                        article: displayArticles[index],
+                        onArticleClick: () {
+                          Navigator.pushNamed(context, '/article',
+                              arguments: displayArticles[index]);
+                        },
+                      );
                     }
                   },
                 ),

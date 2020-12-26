@@ -6,16 +6,21 @@ import 'package:hareclip/screens/article/components/content.dart';
 import 'package:hareclip/screens/article/components/header.dart';
 import 'package:hareclip/screens/article/components/title.dart';
 import 'package:hareclip/services/api.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ArticleScreen displays single article
 class ArticleScreen extends StatelessWidget {
+  final SharedPreferences prefs;
+
+  ArticleScreen({Key key, this.prefs}) : super(key: key);
+
   Widget build(BuildContext context) {
     final Article article = ModalRoute.of(context).settings.arguments;
     return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
-            ArticleHeader(article: article),
+            ArticleHeader(article: article, prefs: prefs),
             Expanded(
               child: ListView(
                 physics: BouncingScrollPhysics(),

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hareclip/models/article.dart';
-import 'package:hareclip/screens/article/article.dart';
 
 // ArticleCard displays article preview card
 class ArticleCard extends StatelessWidget {
   final Article article;
+  final Function onArticleClick;
 
-  ArticleCard({Key key, @required this.article}) : super(key: key);
+  ArticleCard({
+    Key key,
+    @required this.article,
+    @required this.onArticleClick,
+  }) : super(key: key);
 
   Widget build(BuildContext context) {
     return Padding(
@@ -20,9 +24,7 @@ class ArticleCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           InkWell(
-            onTap: () {
-              Navigator.pushNamed(context, '/article', arguments: article);
-            },
+            onTap: onArticleClick,
             child: Padding(
               padding: const EdgeInsets.only(
                 left: 0,

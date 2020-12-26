@@ -44,4 +44,16 @@ class Article {
       categoryLabel: json['categoryLabel'],
     );
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'contentsFileName': contentsFileName,
+      'title': title,
+      'headerImageFileName': headerImageFileName,
+      'authorFullName': authorFullName,
+      'dateVisible': dateVisible.toIso8601String(),
+      'categoryLabel': categoryLabel,
+    };
+  }
 }

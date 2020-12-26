@@ -26,8 +26,10 @@ class HomeHeader extends StatelessWidget {
               children: <Widget>[
                 Text("Hareclip"),
                 IconButton(
-                  icon: Icon(Icons.person),
-                  onPressed: null, // TODO: add profile
+                  icon: Icon(Icons.book_outlined),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/saved');
+                  },
                 ),
               ],
             ),
