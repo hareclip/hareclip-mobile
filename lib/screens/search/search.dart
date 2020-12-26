@@ -112,7 +112,13 @@ class _SearchScreenState extends State<SearchScreen> {
                             );
                           } else {
                             // Otherwise, render article card
-                            return ArticleCard(article: displayArticles[index]);
+                            return ArticleCard(
+                              article: displayArticles[index],
+                              onArticleClick: () {
+                                Navigator.pushNamed(context, '/article',
+                                    arguments: displayArticles[index]);
+                              },
+                            );
                           }
                         },
                       ),
