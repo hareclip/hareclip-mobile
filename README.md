@@ -1,6 +1,12 @@
-# Hareclip
+<h1 style="display: flex; align-items: center;">
+  <img src="docs/logo.png" width="40rem" height="40rem" /> Hareclip
+</h1>
 
 Mobile reader for the Hare satire newspaper
+
+Home                           | Article
+:-----------------------------:|:-------------------------:
+![Home](docs/screenshot01.png) | ![Article](docs/screenshot02.png)
 
 ## Getting Started
 
@@ -10,13 +16,10 @@ Mobile reader for the Hare satire newspaper
 
 Create `.env` from `sample.env` and insert proper credentials.
 
-This project is a starting point for a Flutter application.
+### Debug in VSCode
 
-A few resources to get you started if this is your first Flutter project:
+Start mobile emulator of choice and run ```Run -> Start Debugging``` in VSCode
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Bundling for Release
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Follow Flutter [release instructions](https://flutter.dev/docs/deployment/android)
