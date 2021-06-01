@@ -11,6 +11,9 @@ Home                           | Article
 ## Getting Started
 
 ### Prerequisites
+- Android Studio
+- Android SDK
+- Java SE 11
 - Flutter
 - Running [Imaginary](https://github.com/h2non/imaginary) deployment
 
