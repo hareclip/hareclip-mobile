@@ -22,7 +22,7 @@ final darkTheme = ThemeData(
   primarySwatch: Colors.red,
   textTheme: TextTheme(
     bodyText1: TextStyle(fontSize: 18.0, color: Color(0xFFC12A2A), height: 1.5),
-    bodyText2: TextStyle(fontSize: 18.0, color: Colors.grey[500], height: 1.5),
+    bodyText2: TextStyle(fontSize: 18.0, color: Colors.grey[350], height: 1.5),
     headline4: TextStyle(color: Colors.white),
   ),
   tabBarTheme: TabBarTheme(

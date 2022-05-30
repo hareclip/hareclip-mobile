@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:hareclip/models/article.dart';
 
 // ArticleTitle displays article title and author
@@ -23,6 +24,18 @@ class ArticleTitle extends StatelessWidget {
           child: Text(
             article.title,
             style: Theme.of(context).textTheme.headline4,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 10,
+          ),
+          child: Text(
+            DateFormat('EEE, M/d/y').format(article.dateVisible),
+            style: Theme.of(context).textTheme.headline6,
           ),
         ),
         Padding(
