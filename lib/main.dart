@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hareclip/screens/article/article.dart';
 import 'package:hareclip/screens/home/home.dart';
@@ -14,6 +17,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future main() async {
   await DotEnv().load('.env');
   SharedPreferences prefs = await SharedPreferences.getInstance();
+
+  // Fix LetsEncrypt cert error:
+  // https://stackoverflow.com/questions/69511057/flutter-on-android-7-certificate-verify-failed-with-letsencrypt-ssl-cert-after-s/69511058#69511058
+  WidgetsFlutterBinding.ensureInitialized();
+  ByteData data = await PlatformAssetBundle().load('assets/ca/lets-encrypt-r3.pem');
+  SecurityContext.defaultContext.setTrustedCertificatesBytes(data.buffer.asUint8List());
+
   runApp(
     ChangeNotifierProvider<ThemeNotifier>(
       create: (_) => ThemeNotifier(prefs),
